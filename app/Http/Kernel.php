@@ -42,6 +42,9 @@ class Kernel extends HttpKernel
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            'throttle:60,1',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\HandlePutFormData::class //middleware added
         ],
     ];
 
@@ -65,5 +68,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'news-owner' => \App\Http\Middleware\NewsOwner::class,
         'comment-owner' => \App\Http\Middleware\CommentOwner::class,
+        'isadmin' => \App\Http\Middleware\IsAdmin::class,
     ];
 }

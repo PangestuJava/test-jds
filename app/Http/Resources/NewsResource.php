@@ -18,6 +18,7 @@ class NewsResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'news_content' => $this->news_content,
+            'image' => $this->image,
             'author' => $this->whenLoaded('author'),
             'created_at' => date_format($this->created_at, "d/m/Y"),
             'comments' => $this->whenLoaded('comments', function () {

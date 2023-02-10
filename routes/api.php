@@ -22,10 +22,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/me', [AuthController::class, 'me']);
 
     // Route untuk news Harus Login
-    Route::post('/news', [NewsController::class, 'store']);
+    Route::post('/news', [NewsController::class, 'store'])->middleware('isadmin');
     // Hanya Owner yang bisa edit dan delete
-    Route::patch('/news/{id}/update', [NewsController::class, 'update'])->middleware('news-owner');
-    Route::delete('/news/{id}/delete', [NewsController::class, 'destroy'])->middleware('news-owner');
+    Route::patch('/news/{id}/update', [NewsController::class, 'update'])->middleware(['isadmin', 'news-owner']);
+    Route::delete('/news/{id}/delete', [NewsController::class, 'destroy'])->middleware(['isadmin', 'news-owner']);
 
     // Rote Comment
     Route::post('/news/{news_id}/comment', [CommentController::class, 'store']);

@@ -20,14 +20,16 @@ class NewsSeeder extends Seeder
         DB::beginTransaction();
         try {
             User::create([
+                'role'          => 'admin',
                 'email'         => 'admin@gmail.com',
-                'username'      => 'admin',
+                'username'      => 'yani',
                 'password'      => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'firstname'     => 'admin',
+                'firstname'     => 'yani',
                 'lastname'      => ''
             ]);
 
             User::create([
+                'role'          => 'admin',
                 'email'         => 'tono@gmail.com',
                 'username'      => 'tono',
                 'password'      => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -58,7 +60,7 @@ class NewsSeeder extends Seeder
             News::create([
                 'title'         => 'Bang Toyib Akhirnya Pulang',
                 'news_content'  => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptates vita officia nisi sequi fuga voluptatum architecto maiores ut expedita neque cum nobis quas recusandae sunt sed reprehenderit temporibus ad nemo, eum vero soluta! Alias in minus explicabo eveniet tenetur doloribus, tempore quibusdam nihil nobis unde sit sed nostrum! At quasi accusantium accusamus eum modi provident, quod optio harum labore officia sed repudiandae. Facere veritatis perferendis magnam nobis doloribus repellendus.',
-                'author_id'        => '3'
+                'author_id'        => '1'
             ]);
 
             DB::commit();
