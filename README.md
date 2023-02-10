@@ -31,12 +31,12 @@ Run the following command:
 ```
 
 ## Username & Password Role (Admin)
-email: admin@gmail.com
-password: password
+-   email: admin@gmail.com
+-   password: password
 
 ## Username & Password Role (User)
-email: yadi@gmail.com
-password: password
+-   email: yadi@gmail.com
+-   password: password
 
 #### access
 
