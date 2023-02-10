@@ -17,7 +17,7 @@ class NewsController extends Controller
 
     public function show($id)
     {
-        $news = News::with('author:id,firstname,lastname')->findOrFail($id);
+        $news = News::with(['author:id,firstname,lastname', 'comments:id,news_id,user_id,comments_content'])->findOrFail($id);
         return new NewsResource($news);
     }
 
