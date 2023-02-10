@@ -1,14 +1,14 @@
 # Laravel 9 - Test JDS
 
+## Download Project and Save Project in Locally
+
+## change the file named ".env.example" to ".env"
+
+## Create a new database in MySQL with the name "test-jds"
+
 ## Run Locally
 
-Customize database in the .env file
-
-```bash
-  DB_DATABASE=...
-```
-
-Create a new database on the localserver according to the DB_DATABASE
+Run the following command:
 
 ```bash
     composer install
@@ -19,13 +19,25 @@ Create a new database on the localserver according to the DB_DATABASE
 ```
 
 ```bash
-    php artisan artisan migrate:fresh --seed
+    php artisan migrate:fresh --seed
+```
+
+```bash
+    php artisan passport:install
 ```
 
 ```bash
     php artisan serve
 ```
 
+## Username & Password Role (Admin)
+email: admin@gmail.com
+password: password
+
+## Username & Password Role (User)
+email: yadi@gmail.com
+password: password
+
 #### access
 
--   http://127.0.0.1:8000/
+-   http://127.0.0.1:8000/api/news
